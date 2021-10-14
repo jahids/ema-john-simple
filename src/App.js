@@ -6,6 +6,8 @@ import OrderReview from './component/orderreview/OrderReview';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Product from './component/product/Product';
 import Placeorder from './component/placeorder/Placeorder';
+import Login from './component/Login/Login';
+import Register from './component/register/Register';
 
 function App() {
   return (
@@ -32,6 +34,15 @@ function App() {
 
         <Route exact path="/placeorder">
         <Placeorder></Placeorder>
+        </Route>
+
+        <Route exact path="/login">
+        <Login></Login>
+        </Route>
+
+
+        <Route exact path="/register">
+        <Register></Register>
         </Route>
         
 
