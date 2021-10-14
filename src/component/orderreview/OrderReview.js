@@ -20,7 +20,7 @@ const OrderReview = () => {
     }
 
     const handleplaceOrder = () => {
-        // history.push("/placeorder");
+        history.push("/placeorder");
 
         setcart([]);
         clearTheCart();

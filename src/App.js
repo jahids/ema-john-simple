@@ -8,10 +8,14 @@ import Product from './component/product/Product';
 import Placeorder from './component/placeorder/Placeorder';
 import Login from './component/Login/Login';
 import Register from './component/register/Register';
+import Authprovider from './context/Authprovider';
+import Privateroute from './privateRoute/Privateroute';
 
 function App() {
   return (
     <div className="App">
+
+<Authprovider>
 
       <BrowserRouter>
       <Header>
@@ -19,7 +23,10 @@ function App() {
       </Header>
        <Switch>
 
-       <Route exact path="/">
+      
+
+
+      <Route exact path="/">
        <Shop></Shop>
         </Route>
        
@@ -32,9 +39,10 @@ function App() {
         </Route>
 
 
-        <Route exact path="/placeorder">
-        <Placeorder></Placeorder>
-        </Route>
+
+        <Privateroute path="/placeorder">
+         <Placeorder></Placeorder>
+        </Privateroute>
 
         <Route exact path="/login">
         <Login></Login>
@@ -49,8 +57,10 @@ function App() {
         <Route exact path="/orderReview">
         <OrderReview >
         </OrderReview>
-        </Route>
+          </Route>
 
+
+      
         {/* <Route exact path="/review">
         <OrderReview >
         </OrderReview>
@@ -60,6 +70,7 @@ function App() {
        </Switch>
       </BrowserRouter>
       
+      </Authprovider>
       
     
      

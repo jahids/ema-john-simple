@@ -2,12 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import inisializeAuthentication from '../../firebase/firebase.init';
 import logo from "../../images/logo.png"
+import UseAuth from '../Hook/UseAuth';
 import Usefirebase from '../Hook/Usefirebase';
 import "./header.css"
 
 inisializeAuthentication();
+
 const Header = () => {
-    const {user, logout} = Usefirebase();
+    const {user, logout} = UseAuth();
+
     return (
         <div className="header">
            
@@ -16,6 +19,10 @@ const Header = () => {
                 <NavLink to ="/shop">Shop</NavLink>
                 <NavLink to ="/orderReview">order</NavLink>
                 <NavLink to ="/review">Manage inventory</NavLink>
+                {user?.displayName &&
+                 <span style={{color:'white'}} >hello  {user.displayName} </span>
+                }
+               
                 {/* <NavLink to ="/login">Login</NavLink> */} 
                 {
                     user.email ? 
@@ -27,6 +34,7 @@ const Header = () => {
             </nav>
         </div>
     );
+
 };
 
 export default Header;

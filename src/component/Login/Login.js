@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import inisializeAuthentication from '../../firebase/firebase.init';
-import Usefirebase from '../Hook/Usefirebase';
+import UseAuth from '../Hook/UseAuth';
+
 
 import "./login.css"
 inisializeAuthentication();
 
 const Login = () => {
-    const {user,signinusingGoogle,logout} = Usefirebase();
+    const {signinusingGoogle} = UseAuth();
     return (
         <div className="login-form" >
             <div>
