@@ -11,12 +11,9 @@ const Usefirebase = () => {
 //   handle button google
 
     const signinusingGoogle = () => {
-        signInWithPopup(auth,googleprovider)
-        .then(result => {
-            console.log(result.user);
-        })
-        
-
+       return signInWithPopup(auth,googleprovider)
+       
+      
 
     }
 

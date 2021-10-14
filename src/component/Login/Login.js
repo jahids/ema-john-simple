@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useHistory,useLocation} from 'react-router-dom';
 import inisializeAuthentication from '../../firebase/firebase.init';
 import UseAuth from '../Hook/UseAuth';
 
@@ -9,6 +9,20 @@ inisializeAuthentication();
 
 const Login = () => {
     const {signinusingGoogle} = UseAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect = location.state?.from || "/shop";
+
+    const handleGoogleLogin = () => {
+
+        signinusingGoogle()
+        .then(result => {
+            history.push(redirect);
+        })
+    
+        
+    }
+
     return (
         <div className="login-form" >
             <div>
@@ -24,7 +38,7 @@ const Login = () => {
                 <p>new to ema-john <Link to="/register">create Account</Link></p>
             </div>
             <div>---------or----------</div>
-             <button onClick={signinusingGoogle} className="regualar-btn">Google Sign in</button>
+             <button onClick={handleGoogleLogin} className="regualar-btn">Google Sign in</button>
         </div>
     );
 };
