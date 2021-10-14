@@ -1,0 +1,19 @@
+.product{
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+.product-name{
+    color: blue;
+}
+.regualar-btn{
+    background-color: goldenrod;
+    width: 150px;
+    border-radius: 5px;
+    height: 25px;
+    border: 1px solid gray;
+    padding: 5px;
+    margin-top: 5px;
+}
+.icon-color{
+    color: goldenrod;
+}

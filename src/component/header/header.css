@@ -1,0 +1,18 @@
+.logo{
+    width: 25%;
+    margin: auto;
+}
+
+.header nav{
+    background-color: black;
+    padding: 40px;
+}
+nav a{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.header nav a:hover{
+    background-color: lightgray;
+}
